@@ -1,0 +1,23 @@
+sort1 uses: Bubble
+
+random10000 0.706
+reversed10000 0.460
+sorted10000 0.022
+
+How do you know?: O(n^2) vs o(n), expect best case (sorted) to be magnitude faster than random/reversed for bubble sort
+
+sort2 uses: Merge
+
+random10000 0.085
+reversed10000 0.054
+sorted10000 0.037
+
+How do you know?: O(nlogn) vs o(nlogn), expect best overall performance on random/reversed with a similar speed on sorted for merge sort
+
+sort3 uses: Selection
+
+random10000 0.247
+reversed10000 0.238
+sorted10000 0.304
+
+How do you know?: O(n^2) vs o(n^2), expect similar performance across all cases, with overall slowest performance on best case (sorted) for selection sort
