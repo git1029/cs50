@@ -17,5 +17,9 @@ Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021
 * [Substitution](week2/pset2/substitution/substitution.c)
 
 **Week 3** - Algorithms
-* [Collatz](week3/other3/collatz.c)
-* [Sort](week3/lab3/sort.txt)
+* [Collatz](week3/other3/collatz/collatz.c)
+* [Sort](week3/lab3/sort/sort.txt)
+* [Plurality](week3/pset3/plurality/plurality.c)
+* [Runoff](week3/pset3/runoff/runoff.c)
+* [Merge Sort](week3/other3/merge/merge.c)
+* [Tideman](week3/pset3/tideman/tideman.c)
