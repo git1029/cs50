@@ -226,8 +226,10 @@ bool creates_loop(int root, int end)
 // Print the winner of the election
 void print_winner(void)
 {
+    // Loop through candidates
     for (int i = 0; i < candidate_count; i++)
     {
+        // Initialize wins/losses
         int wins = 0;
         int losses = 0;
 
@@ -240,14 +242,17 @@ void print_winner(void)
 
             if (locked[i][j])
             {
+                // Increment win count
                 wins++;
             }
             else if (locked[j][i])
             {
+                // Increment loss count
                 losses++;
             }
         }
 
+        // Candidate at source of graph will have 1 or more wins with no losses 
         if (wins > 0 && losses == 0)
         {
             printf("%s\n", candidates[i]);
