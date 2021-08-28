@@ -31,5 +31,5 @@ Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021
 * [Recover](week4/pset4/recover)
 
 **Week 5** - Data Structures
-* [Inheritance](week4/lab5/inheritance)
-* [Speller](week4/pset5/speller)
+* [Inheritance](week5/lab5/inheritance)
+* [Speller](week5/pset5/speller)
