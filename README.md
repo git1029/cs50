@@ -3,29 +3,33 @@
 Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021/)
 
 **Week 1** – C
-* [Hello](week1/lab1/hello/hello.c)
-* [Population](week1/lab1/population/population.c)
-* [Mario (less)](week1/pset1/mario/less/mario.c)
-* [Mario (more)](week1/pset1/mario/more/mario.c)
-* [Cash](week1/pset1/cash/cash.c)
-* [Credit](week1/pset1/credit/credit.c)
+* [Hello](week1/lab1/hello)
+* [Population](week1/lab1/population)
+* [Mario (less)](week1/pset1/mario/less)
+* [Mario (more)](week1/pset1/mario/more)
+* [Cash](week1/pset1/cash)
+* [Credit](week1/pset1/credit)
 
 **Week 2** – Arrays
-* [Scrabble](week2/lab2/scrabble/scrabble.c)
-* [Readability](week2/pset2/readability/readability.c)
-* [Caesar](week2/pset2/caesar/caesar.c)
-* [Substitution](week2/pset2/substitution/substitution.c)
+* [Scrabble](week2/lab2/scrabble)
+* [Readability](week2/pset2/readability)
+* [Caesar](week2/pset2/caesar)
+* [Substitution](week2/pset2/substitution)
 
 **Week 3** - Algorithms
-* [Collatz](week3/other3/collatz/collatz.c)
-* [Sort](week3/lab3/sort/sort.txt)
-* [Plurality](week3/pset3/plurality/plurality.c)
-* [Runoff](week3/pset3/runoff/runoff.c)
-* [Merge Sort](week3/other3/merge/merge.c)
-* [Tideman](week3/pset3/tideman/tideman.c)
+* [Collatz](week3/other3/collatz)
+* [Sort](week3/lab3/sort)
+* [Plurality](week3/pset3/plurality)
+* [Runoff](week3/pset3/runoff)
+* [Merge Sort](week3/other3/merge)
+* [Tideman](week3/pset3/tideman)
 
 **Week 4** - Memory
-* [Volume](week4/lab4/volume/volume.c)
-* [Filter (less)](week4/pset4/filter/less/helpers.c)
-* [Filter (more)](week4/pset4/filter/more/helpers.c)
-* [Recover](week4/pset4/recover/recover.c)
+* [Volume](week4/lab4/volume)
+* [Filter (less)](week4/pset4/filter/less)
+* [Filter (more)](week4/pset4/filter/more)
+* [Recover](week4/pset4/recover)
+
+**Week 5** - Data Structures
+* [Inheritance](week4/lab5/inheritance)
+* [Speller](week4/pset5/speller)
