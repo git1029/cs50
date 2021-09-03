@@ -33,3 +33,13 @@ Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021
 **Week 5** - Data Structures
 * [Inheritance](week5/lab5/inheritance)
 * [Speller](week5/pset5/speller)
+
+**Week 6** - Python
+* [Tournament](week6/lab6/tournament)
+* [Hello](week6/pset6/hello)
+* [Mario (less)](week6/pset6/mario/less)
+* [Mario (more)](week6/pset6/mario/more)
+* [Cash](week6/pset6/cash)
+* [Credit](week6/pset6/credit)
+* [Readability](week6/pset6/readability)
+* [DNA](week6/pset6/dna)
