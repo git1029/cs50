@@ -1,0 +1,2 @@
+-- Get titles and ratings of movies released in 2010 ordered by rating descending and title ascending
+SELECT title, rating FROM movies JOIN ratings on id = movie_id WHERE year = 2010 ORDER BY rating DESC, title;

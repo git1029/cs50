@@ -43,3 +43,8 @@ Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021
 * [Credit](week6/pset6/credit)
 * [Readability](week6/pset6/readability)
 * [DNA](week6/pset6/dna)
+
+**Week 7** - SQL
+* [Songs](week7/lab7/songs)
+* [Movies](week7/pset7/movies)
+* [Fiftyville](week7/pset7/fiftyville)
