@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const part1 = document.querySelector('#part1')
+                part1.querySelectorAll('button').forEach((b, i) => {
+                    b.addEventListener('click', (event) => {
+                        if (i !== 3) {
+                            event.target.classList.add('incorrect')
+                            event.target.disabled = true
+                            part1.querySelector('.result').innerHTML = 'Incorrect!'
+                        }
+                        else {
+                            event.target.classList.add('correct')
+                            part1.querySelector('.result').innerHTML = 'Correct!'
+                            part1.querySelectorAll('button').forEach((b, i) => {
+                                b.disabled = true
+                            })
+                        }
+                    })
+                })
+
+                const part2 = document.querySelector('#part2')
+                part2.querySelector('.answer').addEventListener('focus', (event) => {
+                    event.target.classList.remove('incorrect')
+                    part2.querySelector('.result').innerHTML = ''
+                })
+                part2.querySelector('.submit').addEventListener('click', (event) => {
+                    event.preventDefault()
+                    const answer = part2.querySelector('.answer')
+                    console.log(answer.value)
+                    if (answer.value === '1961') {
+                        answer.classList.add('correct')
+                        part2.querySelector('.result').innerHTML = 'Correct!'
+                        answer.disabled = true
+                        event.target.disabled = true
+                    }
+                    else {
+                        answer.classList.add('incorrect')
+                        part2.querySelector('.result').innerHTML = 'Incorrect!'
+                    }
+                })
+            })
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the capital of Burkina Faso?</h3>
+                <div id="part1">
+                    <div class="answer">
+                        <button value="Bamako">Bamako</button>
+                        <button value="Niamey">Niamey</button>
+                        <button value="Porto-Novo">Porto-Novo</button>
+                        <button value="Ouagadougou">Ouagadougou</button>
+                        <button value="Lomé">Lomé</button>
+                    </div>
+                    <div class="result"></div>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>In what year did Yuri Gagarin become the first human to journey into outer space?</h3>
+                <div id="part2">
+                    <form>
+                        <input type="text" value="" class="answer"/>
+                        <input type="submit" value="Check Answer" class="submit"/>
+                    </form>
+                    <div class="result"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

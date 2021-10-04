@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+
+        <script>
+            const removeBirthday = async (id) => {
+                if (window.confirm("Do you really want to delete this birtday?")) {
+                    try {
+                        await fetch(`/${id}`, { method: "DELETE" })
+                        const row = document.querySelector(`tr#bid-${id}`)
+                        row.remove()
+                    }
+                    catch (error) {
+                        console.log(error)
+                        console.log("error deleting birthday")
+                    }
+                }
+                else return
+            }
+
+            const toggleEdit = (id) => {
+                const row = document.querySelector(`tr#bid-${id}`)
+                if (row.classList.contains("mode-edit")) {
+                    row.classList.remove("mode-edit")
+                    row.classList.add("mode-view")
+                }
+                else if (row.classList.contains("mode-view")) {
+                    row.classList.remove("mode-view")
+                    row.classList.add("mode-edit")
+                }
+            }
+
+
+            const updateBirthday = async (id) => {
+                const row = document.querySelector(`tr#bid-${id}`)
+                const newObject = {
+                    name: row.querySelector(`#edit-name-${id}`).value,
+                    month: row.querySelector(`#edit-month-${id}`).value,
+                    day: row.querySelector(`#edit-day-${id}`).value
+                }
+
+                try {
+                    await fetch(`/${id}`, {
+                        headers: { "Content-Type": "application/json" },
+                        method: "PATCH",
+                        body: JSON.stringify(newObject)
+                    })
+                    row.querySelector(`#view-name-${id}`).innerHTML = `${newObject.name}`
+                    row.querySelector(`#view-date-${id}`).innerHTML = `${newObject.month}/${newObject.day}`
+                    row.querySelector(`#edit-name-${id}`).value = `${newObject.name}`
+                    row.querySelector(`#edit-month-${id}`).value = `${newObject.month}`
+                    row.querySelector(`#edit-day-${id}`).value = `${newObject.day}`
+                    row.classList.remove("mode-edit")
+                    row.classList.add("mode-view")
+                }
+                catch (error) {
+                    console.log(error)
+                    console.log("error updating birthday")
+                }
+        }
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post">
+                    <input type="text" name="name" placeholder="Name" />
+                    <input type="text" name="day" placeholder="Day" />
+                    <input type="text" name="month" placeholder="Month" />
+                    <button type="submit">Add Birthday</button>
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for b in birthdays %}
+                            <tr id="bid-{{ b["id"] }}" class="mode-view">
+                                <td>
+                                    <div class="b-view" id="view-name-{{ b["id"] }}">{{ b["name"] }}</div>
+                                    <div class="b-edit">
+                                        <input type="text" id="edit-name-{{ b["id"] }}" value={{ b["name"] }} />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="b-view" id="view-date-{{ b["id"] }}">{{ b["month"] }}/{{ b["day"] }}</div>
+                                    <div class="b-edit">
+                                        <input type="text" id="edit-month-{{ b["id"] }}" value={{ b["month"] }} />
+                                        <input type="text" id="edit-day-{{ b["id"] }}" value={{ b["day"] }} />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="b-view">
+                                        <button onclick=toggleEdit({{ b["id"] }})>Edit</button>
+                                        <button onclick=removeBirthday({{ b["id"] }})>Delete</button>
+                                    </div>
+                                    <div class="b-edit">
+                                        <button onclick=updateBirthday({{ b["id"] }})>Save</button>
+                                        <button onclick=toggleEdit({{ b["id"] }})>Cancel</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

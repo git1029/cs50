@@ -48,3 +48,10 @@ Lab and Problem Set submissions for [CS50x 2021](https://cs50.harvard.edu/x/2021
 * [Songs](week7/lab7/songs)
 * [Movies](week7/pset7/movies)
 * [Fiftyville](week7/pset7/fiftyville)
+
+**Week 8** - HTML, CSS, JavaScript
+* [Trivia](week8/lab8/trivia)
+* [Homepage](week8/pset8/homepage)
+
+**Week 9** - Flask
+* [Birthdays](week9/lab9/birthdays)
