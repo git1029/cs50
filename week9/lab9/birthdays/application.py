@@ -34,11 +34,9 @@ def remove(id):
     if request.method == "DELETE":
         if db.execute("SELECT * FROM birthdays WHERE id = ?", id):
             db.execute("DELETE FROM birthdays WHERE id = ?", id)
-            data = { "data": "birthday deleted successfully" }
-            return data, 204
+            return '', 204
 
-        data = { "error": "birthday already deleted from server" }
-        return data, 404
+        return '', 404
 
     elif request.method == "PATCH":
         data = request.json
